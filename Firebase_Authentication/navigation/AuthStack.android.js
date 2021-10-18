@@ -12,6 +12,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from '../screens/HomeScreen';
+import LeftPanel from '../screens/LeftPanel';
 
 const Stack = createNativeStackNavigator();
 
@@ -54,23 +55,9 @@ const AuthStack = () => {
         options={{header: () => null}}
       />
        <Stack.Screen
-      name="Home"
-      component={HomeScreen}
-      options={{
-        title: '',
-        headerTitleAlign: 'center',
-        headerStyle: {
-          backgroundColor: '#fff',
-          shadowColor: '#fff',
-          elevation: 0,
-        },
-        headerBackTitleVisible: false,
-        headerBackImage: () => (
-          <View style={{marginLeft: 15}}>
-            <Ionicons name="arrow-back" size={25} color="#2e64e5" />
-          </View>
-        ),
-      }}
+      name="LeftPanel"
+      component={LeftPanel}
+      options={{header: () => null}}
     />
       <Stack.Screen
         name="Signup"

@@ -15,7 +15,7 @@ export const AuthProvider = ({children}) => {
             auth().signInWithEmailAndPassword(email,password,navigation)
             .then(() => {
               console.log('User account signed in!');
-              navigation.navigate('Home')
+              navigation.navigate('LeftPanel')
             })
             .catch(error => {
           
