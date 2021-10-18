@@ -1,16 +1,42 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { View, Text, Image } from 'react-native';
+import {
+  createDrawerNavigator,
+  DrawerContentScrollView,
+  DrawerItemList,
+  DrawerItem,
+} from '@react-navigation/drawer';
 import HomeScreen from './HomeScreen';
 import BottomTab from './BottomTab';
 
 const Drawer = createDrawerNavigator();
 
-  
-
-  function LeftPanel() {
+function CustomDrawerContent(props) {
   return (
-    <Drawer.Navigator initialRouteName="Home">
+    <DrawerContentScrollView {...props}>
+      <View
+        style={{
+          backgroundColor: '#ffffff',
+          height: 140,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Image
+          style={{ height: 150, width: 120 }}
+          source={{ uri:'https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small_2x/man-with-beard-avatar-character-isolated-icon-free-vector.jpg' }}
+        />
+
+      </View>
+      <DrawerItemList {...props} />
+
+    </DrawerContentScrollView>
+  );
+}
+
+function LeftPanel() {
+  return (
+    <Drawer.Navigator initialRouteName="Home" drawerContent={(props) => <CustomDrawerContent {...props} />}>
       <Drawer.Screen
         name="Home"
         component={HomeScreen}
@@ -21,7 +47,7 @@ const Drawer = createDrawerNavigator();
         component={BottomTab}
         options={{ drawerLabel: 'Tabs' }}
       />
-   
+
     </Drawer.Navigator>
   );
 }
