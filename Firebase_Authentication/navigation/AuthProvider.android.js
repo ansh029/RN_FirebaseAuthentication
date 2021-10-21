@@ -1,5 +1,7 @@
 import React, {createContext, useState} from 'react';
 import auth from '@react-native-firebase/auth';
+
+
 export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
@@ -14,7 +16,7 @@ export const AuthProvider = ({children}) => {
           
             auth().signInWithEmailAndPassword(email,password,navigation)
             .then(() => {
-              console.log('User account signed in!');
+              console.log('User account signed in!');  
               navigation.navigate('LeftPanel')
             })
             .catch(error => {

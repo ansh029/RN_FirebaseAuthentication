@@ -1,0 +1,22 @@
+{
+  "Birlasoft": [
+    {
+      "name": "Anshul",
+      "designation": "Technical specialist",
+      "shift": "morning",
+      "id": 1
+    },
+    {
+      "name": "Aman",
+      "designation": "Technical Lead",
+      "shift": "afternoon",
+      "id": 2
+    },
+    {
+      "name": "nitu",
+      "designation": "Software developer",
+      "shift": "afternoon",
+      "id": 3
+    }
+  ]
+}
